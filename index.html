@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Statue of Laocoön</title>
+<title>Farhan Ahmed | Portfolio</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@1,500&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;user-select:none}
@@ -64,34 +64,34 @@ body{min-height:900vh;font-family:'Outfit',sans-serif;color:#fff;overflow-x:hidd
 <div class="cursor-outer"></div>
 <div class="cinematic-container">
   <div class="main-header">
-    <div class="brand">Laocoön</div>
+    <div class="brand">Farhan Ahmed</div>
     <nav class="header-nav">
-      <a href="#slide-1" class="nav-link">Bronze</a><span class="nav-dot"></span>
-      <a href="#slide-2" class="nav-link">Marble</a><span class="nav-dot"></span>
-      <a href="#slide-3" class="nav-link">Fluid</a><span class="nav-dot"></span>
-      <a href="#slide-4" class="nav-link">Digital</a>
+      <a href="#slide-1" class="nav-link">About</a><span class="nav-dot"></span>
+      <a href="#slide-2" class="nav-link">Editing</a><span class="nav-dot"></span>
+      <a href="#slide-3" class="nav-link">Graphics</a><span class="nav-dot"></span>
+      <a href="#slide-4" class="nav-link">Web</a>
     </nav>
     <div class="header-actions"><a href="#" class="contact-btn">Contact <span class="btn-circle"></span></a></div>
   </div>
   <div class="slide" id="slide-1">
-    <h2 class="slide-title">Bronze <br>and Time</h2>
+    <h2 class="slide-title">Farhan <br>Ahmed</h2>
     <div class="desc-row">
-      <p class="slide-desc col-1">A timeless material holding centuries of human history. Fluid in hot flames, eternal in its form. Each curve captures a tense, dramatic moment.</p>
-      <p class="slide-desc col-2">Born of molten fire and creative will, it stands to bridge our ancient memory and modern vision. A fluid energy frozen in still, heavy bronze.</p>
+      <p class="slide-desc col-1">18-year-old creator and student from Jinnah Institute, Rawalpindi. Passionate about bringing imagination to life through digital media.</p>
+      <p class="slide-desc col-2">Specializing in modern visual storytelling, blending technical precision with creative flair across video editing and graphic design.</p>
     </div>
   </div>
-  <div class="slide-image-mask" id="slide-2-img"><img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6/1.png" alt="Editorial Concept"></div>
+  <div class="slide-image-mask" id="slide-2-img"><img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6/1.png" alt="Portfolio Preview"></div>
   <div class="slide" id="slide-2">
-    <h2 class="slide-title">Marble <br>Emotion</h2>
-    <p class="slide-desc">A sculpture frozen at the peak of human suffering and heroic struggle. Laocoön and his sons, bound by ruthless fate.</p>
+    <h2 class="slide-title">Video <br>Editing</h2>
+    <p class="slide-desc">Crafting cinematic experiences and dynamic cuts. Turning raw footage into engaging visual stories with professional rhythm and precision.</p>
   </div>
   <div class="slide" id="slide-3">
-    <h2 class="slide-title">Liquid Metal</h2>
-    <p class="slide-desc">Art that breathes. Mesmerizing waves of liquid bronze flow through space, reflecting every contour and tensed muscle of the ancient masterpiece.</p>
+    <h2 class="slide-title">Graphic <br>Design</h2>
+    <p class="slide-desc">Creating striking visual aesthetics and clean layouts. Translating ideas into impactful designs that catch the eye and communicate clearly.</p>
   </div>
   <div class="slide" id="slide-4">
-    <h2 class="slide-title">Eternal <br>Moment</h2>
-    <p class="slide-desc">Contemplating antique form through the lens of new dimensions. A classic masterpiece reborn in the currents of radiant digital matter.</p>
+    <h2 class="slide-title">Web & <br>Digital</h2>
+    <p class="slide-desc">Exploring code and interactive web experiences. Building modern, stylish web applications with a strong focus on design and usability.</p>
   </div>
 </div>
 <div class="grid-horizontal-line"></div>
@@ -177,7 +177,7 @@ function loadModel() {
     const center = new THREE.Box3().setFromObject(gltfModel).getCenter(new THREE.Vector3());
     gltfModel.position.sub(center);
     modelPivot.position.y = -.4;
-  }, undefined, (e) => console.error('Error loading bronze horse model:', e));
+  }, undefined, (e) => console.error('Error loading model:', e));
 }
 function createBackgroundShader() {
   const vertexShader = `
@@ -187,12 +187,6 @@ function createBackgroundShader() {
     varying vec2 vUv;
     uniform float uTime; uniform vec2 uResolution; uniform vec2 uMouse; uniform float uScroll;
     float hash(float n){ return fract(sin(n) * 43758.5453123); }
-    float noise(in vec3 x){
-      vec3 p = floor(x); vec3 f = fract(x); f = f*f*(3.0-2.0*f);
-      float n = p.x + p.y*57.0 + 113.0*p.z;
-      return mix(mix(mix(hash(n+0.0),hash(n+1.0),f.x), mix(hash(n+57.0),hash(n+58.0),f.x),f.y),
-                 mix(mix(hash(n+113.0),hash(n+114.0),f.x), mix(hash(n+170.0),hash(n+171.0),f.x),f.y),f.z);
-    }
     void main(){
       vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
       float aspect = uResolution.x / uResolution.y;
@@ -204,8 +198,6 @@ function createBackgroundShader() {
       float scrollDeform = scroll * 5.0;
       warpedUv.x += sin(uv.y * 2.5 + time * 0.2 + scrollDeform) * 0.35;
       warpedUv.y += cos(uv.x * 2.5 - time * 0.15 - scrollDeform * 0.8) * 0.35;
-      warpedUv.x += sin(uv.y * 1.2 - time * 0.1 - scrollDeform * 1.5) * 0.25;
-      warpedUv.y += cos(uv.x * 1.2 + time * 0.18 + scrollDeform * 1.2) * 0.25;
       vec2 scrollDrift = vec2(scroll * 0.04, -scroll * 0.02);
       vec2 mouseShift = vec2(uMouse.x * aspect * 0.05, uMouse.y * 0.05);
       warpedUv += scrollDrift + mouseShift;
@@ -381,7 +373,7 @@ function init() {
   key.shadow.camera.near = 1.0; key.shadow.camera.far = 15; key.shadow.bias = -0.001;
   scene.add(key);
   const rim = new THREE.DirectionalLight('#e3f2ff', 10.0); rim.position.set(-5, 3, -4); scene.add(rim);
-  const fill = new THREE.DirectionalLight('#fff3e6', 0.8); fill.position.set(-2, -4, 2); scene.add(fill);
+  const fill = newTL = new THREE.DirectionalLight('#fff3e6', 0.8); fill.position.set(-2, -4, 2); scene.add(fill);
   createSparks();
   loadModel();
   onWindowResize();
