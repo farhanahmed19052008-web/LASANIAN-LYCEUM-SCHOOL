@@ -275,3 +275,6 @@ function init() {
   setupNavigation();
 }
 if (document.readyState === 'loading') window.addEventListener('DOMContentLoaded', init); else init();
+const c = document.querySelector('.contact-btn');
+c.href = 'https://instagram.com/e.x_farhan';
+c.target = '_blank';
