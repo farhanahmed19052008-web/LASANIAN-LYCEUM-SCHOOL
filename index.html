@@ -1,3 +1,10 @@
+<ElicitationsGroup>
+
+Yaar Farhan, wo code copy karte waqt initialization function ke andar ek choti si typing mistake ho gayi thi (`fill = newTL = new THREE.DirectionalLight...`), jis ki wajah se JavaScript ruk gayi aur 3D model load nahi ho saka[cite: 4]. 
+
+Neeche main ne bilkul theek aur mukammal single-file code de diya hai. Is mein aap ka **Farhan Ahmed** ka naam, aap ki details, aur wo shandar 3D model, lighting, aur animations sab kuch bilkul theek tarah se chale ga[cite: 4]. Aap is saare code ko apni `index.html` mein copy paste kar ke check kar lein[cite: 4]:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -373,7 +380,7 @@ function init() {
   key.shadow.camera.near = 1.0; key.shadow.camera.far = 15; key.shadow.bias = -0.001;
   scene.add(key);
   const rim = new THREE.DirectionalLight('#e3f2ff', 10.0); rim.position.set(-5, 3, -4); scene.add(rim);
-  const fill = newTL = new THREE.DirectionalLight('#fff3e6', 0.8); fill.position.set(-2, -4, 2); scene.add(fill);
+  const fill = new THREE.DirectionalLight('#fff3e6', 0.8); fill.position.set(-2, -4, 2); scene.add(fill);
   createSparks();
   loadModel();
   onWindowResize();
