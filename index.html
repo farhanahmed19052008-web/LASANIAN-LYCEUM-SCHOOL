@@ -31,7 +31,7 @@ body{min-height:900vh;font-family:'Outfit',sans-serif;color:#fff;overflow-x:hidd
 #slide-1 .col-1{margin-left:60px;width:calc(25vw - 60px);max-width:calc(25vw - 60px)}
 #slide-1 .col-2{position:absolute;left:calc(25vw + 40px);width:calc(25vw - 60px);max-width:calc(25vw - 60px)}
 #slide-2{left:0;width:100%}
-#slide-2-img{position:fixed;top:90px;left:60px;width:calc(25vw - 60px);aspect-ratio:1/1;overflow:hidden;z-index:2;pointer-events:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.8s cubic-bezier(.16,1,.3,1),opacity .8s ease;opacity:0}
+#slide-2-img{position:fixed;top:90px;left:60px;width:calc(22vw - 40px);aspect-ratio:3/4;overflow:hidden;z-index:2;pointer-events:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.8s cubic-bezier(.16,1,.3,1),opacity .8s ease;opacity:0;border-radius:12px;box-shadow:0 20px 40px rgba(0,0,0,0.8)}
 #slide-2-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform 1.8s cubic-bezier(.16,1,.3,1)}
 #slide-2-img.active{clip-path:inset(0 0 0 0);opacity:1}
 #slide-2-img.active img{transform:scale(1)}
@@ -80,7 +80,7 @@ body{min-height:900vh;font-family:'Outfit',sans-serif;color:#fff;overflow-x:hidd
       <p class="slide-desc col-2">Specializing in modern visual storytelling, blending technical precision with creative flair across video editing and graphic design.</p>
     </div>
   </div>
-  <div class="slide-image-mask" id="slide-2-img"><img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/laocoon-59f84455c6/1.png" alt="Portfolio Preview"></div>
+  <div class="slide-image-mask" id="slide-2-img"><img src="profile.jpg" alt="Farhan Ahmed Portrait"></div>
   <div class="slide" id="slide-2">
     <h2 class="slide-title">Video <br>Editing</h2>
     <p class="slide-desc">Crafting cinematic experiences and dynamic cuts. Turning raw footage into engaging visual stories with professional rhythm and precision.</p>
@@ -347,7 +347,7 @@ function animate() {
   shaderUniforms.uMouse.value.set(mouseX, -mouseY);
   shaderUniforms.uScroll.value = currentScroll;
   updateSlides(currentScroll);
-  updateGridDots(currentScroll);
+  updateGridDots(scroll);
   renderer.render(scene, camera);
 }
 function init() {
